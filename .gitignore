@@ -1,0 +1,54 @@
+# binaries for programs
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# ignore .env files
+*.env
+
+# IntelliJ
+.idea
+
+# JSON lines
+*.jl
+
+# Windows desktop
+desktop.ini
+
+# Logs and DBs
+*.log
+*.sqlite
+
+# macOS generated files
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*.DS_Store
+
+# VS Code
+.vscode/
+.history/
+
+pkg/
+
+# Environment variables files
+.env
+
+# Environments
+.venv
+env/
+venv/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local files for trying stuff shouldn't be committed.
+/testing_*.py
+tests/cache
