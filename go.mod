@@ -1,4 +1,4 @@
-module simplebank
+module github.com/zeljkolazic/simplebank
 
 go 1.17
 
