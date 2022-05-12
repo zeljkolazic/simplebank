@@ -2,6 +2,8 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/gin-gonic/gin/binding"
+	"github.com/go-playground/validator/v10"
 	_ "github.com/lib/pq"
 	db "github.com/zeljkolazic/simplebank/db/sqlc"
 )
@@ -15,12 +17,21 @@ type Server struct {
 // NewServer creates a new HTTP server and setup routing
 func NewServer(store db.Store) *Server {
 	server := &Server{store: store}
-
 	router := gin.Default()
+
+	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
+		if err := v.RegisterValidation("currency", validCurrency); err != nil {
+			panic(err)
+		}
+	} else {
+		panic("could not register custom validation")
+	}
 
 	router.POST("/accounts", server.createAccount)
 	router.GET("/accounts/:id", server.getAccount)
 	router.GET("/accounts", server.listAccount)
+
+	router.POST("/transfers", server.createTransfer)
 
 	server.router = router
 	return server
