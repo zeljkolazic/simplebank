@@ -15,6 +15,7 @@ migratedown1:
 sqlc:
 	sqlc generate
 test:
+	export GO111MODULE=off
 	go clean -testcache
 	go test -v -cover ./...
 mock:
