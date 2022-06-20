@@ -15,9 +15,8 @@ migratedown1:
 sqlc:
 	sqlc generate
 test:
-	export GO111MODULE=auto
 	go clean -testcache
-	go test -v -cover ./...
+	export GO111MODULE=auto; go test -v -cover ./...
 mock:
 	mockgen --package mockdb --destination db/mock/store.go simplebank/db/sqlc Store
 server:
