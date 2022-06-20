@@ -3,7 +3,6 @@ package api
 import (
 	"database/sql"
 	"errors"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
 	"net/http"
@@ -89,7 +88,6 @@ func (server Server) listAccount(ctx *gin.Context) {
 	}
 
 	authPayload := ctx.MustGet(authorizationPayloadKey).(*token.Payload)
-	fmt.Printf("--> %+v", authPayload)
 	arg := db.ListAccountsParams{
 		Owner:  authPayload.Username,
 		Offset: (req.PageID - 1) * req.PageSize,
