@@ -2,10 +2,10 @@ package main
 
 import (
 	"database/sql"
-	"github.com/zeljkolazic/simplebank/api"
-	db "github.com/zeljkolazic/simplebank/db/sqlc"
-	"github.com/zeljkolazic/simplebank/util"
 	"log"
+	"simplebank/api"
+	db "simplebank/db/sqlc"
+	"simplebank/util"
 )
 
 func main() {

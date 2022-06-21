@@ -2,9 +2,9 @@ package db
 
 import (
 	"database/sql"
-	"github.com/zeljkolazic/simplebank/util"
 	"log"
 	"os"
+	"simplebank/util"
 	"testing"
 
 	_ "github.com/lib/pq"
