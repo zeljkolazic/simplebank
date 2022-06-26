@@ -7,9 +7,6 @@
 *.test
 *.out
 
-# ignore .env files
-*.env
-
 # IntelliJ
 .idea
 
